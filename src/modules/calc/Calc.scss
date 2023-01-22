@@ -4,12 +4,11 @@
 
 .screen {
     display: flex;
-    height: 50px;
+    height: 70px;
     width: 100%;
     color: white;
     justify-content: end;
     align-items: center;
-    font-size: 26px;
     border-radius: 10px;
     &_wrapper {
         margin: 3px;
@@ -25,8 +24,8 @@
 
 .grid-container {
     display: grid;
-    grid-template-columns: repeat(4, 50px);
-    grid-template-rows: repeat(5, minmax(50px, auto));
+    grid-template-columns: repeat(4, 70px);
+    grid-template-rows: repeat(5, minmax(70px, auto));
     gap: 1px;
     justify-content: center;
 
@@ -45,6 +44,7 @@
         background-color: #5c677a;
         justify-content: center;
         align-items: center;
+        font-size: 30px;
         cursor: pointer;
         &:active {
             background-color: #9da2a8;

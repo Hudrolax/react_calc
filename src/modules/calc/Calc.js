@@ -4,7 +4,7 @@ import './Calc.scss'
 
 const Calc = (props) => {
     const [disp, setDisplay] = useState('0');
-    const [fz, setFontSize] = useState(26);
+    const [fz, setFontSize] = useState(30);
 
     function changeDisplay(key) {
         setDisplay(disp => {
@@ -65,12 +65,14 @@ const Calc = (props) => {
     useEffect(() => {
         setFontSize(fz => {
             if (disp.length < 12) {
+                return 30
+            } else if (disp.length < 18) {
                 return 26
-            } else if (disp.length < 16) {
+            } else if (disp.length < 21) {
                 return 20
-            } else if (disp.length < 19) {
+            } else if (disp.length < 24) {
                 return 17
-            } else if (disp.length < 22) {
+            } else if (disp.length < 26) {
                 return 14
             } else {
                 return 10
