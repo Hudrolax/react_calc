@@ -29,7 +29,6 @@ const Calc = (props) => {
                 }
             }
 
-
             if (key === '.') {
                 try {
                     const _ = `${eval(disp + key)}` !== 'NaN'
@@ -76,10 +75,24 @@ const Calc = (props) => {
             } else {
                 return 10
             }
-
-
         })
     }, [disp])
+
+    const allowed_btns = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '0', '-', '+', '=', '*', '/', '(', ')', '.']
+    useEffect(() => {
+        window.addEventListener('keyup', (e) => {
+            // console.dir(e)
+            if (allowed_btns.includes(e.key)) {
+                changeDisplay(e.key)
+            } else if (e.code === 'Enter' || e.code === 'Space') {
+                changeDisplay('=')
+            } else if (e.code === 'Backspace') {
+                changeDisplay('<')
+            }else if (e.code === 'Escape' || e.code === 'KeyC') {
+                changeDisplay('AC')
+            }
+        })
+    }, [])
 
     const keyboard = [
         'AC', '(', ')', '/',
